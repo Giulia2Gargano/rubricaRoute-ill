@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./count-page.component.css']
 })
 export class CountPageComponent implements OnInit {
-
+  i = 15;
   constructor() { }
 
   ngOnInit(): void {
