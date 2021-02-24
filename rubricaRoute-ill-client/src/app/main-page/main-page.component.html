@@ -1,12 +1,5 @@
 <h1>Main Page</h1>
-<input placeholder="Nome" type="text">
-<input placeholder="Cognome" type="text">
-<input placeholder="Telefono" type="text">
-<br>
-<br>
-<button>Aggiungi</button>
-<button routerLink="/count-page">Conta</button>
-<button routerLink="/search-page">Ricerca</button>
+<app-form-panel (add)="aggiungi($event)" (cont)="conta($event)" (ric)="ricerca($event)" ></app-form-panel>
 <br>
 <br>
 <table>

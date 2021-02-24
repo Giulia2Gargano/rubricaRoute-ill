@@ -12,4 +12,15 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  aggiungi(s: string) {
+    console.log("Aggiunto campo");
+  }
+
+  conta(s: string) {
+    console.log("Ricevuto evento conta");
+  }
+
+  ricerca(s: string) {
+    console.log("Ricevuto evento ricerca");
+  }
 }

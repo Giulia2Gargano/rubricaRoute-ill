@@ -1,1 +1,8 @@
-<p>form-panel works!</p>
+<input placeholder="Nome" type="text" [(ngModel)]="nome">
+<input placeholder="Cognome" type="text" [(ngModel)]="cognome">
+<input placeholder="Telefono" type="text" [(ngModel)]="telefono">
+<br>
+<br>
+<button (click)="aggiungi()">Aggiungi</button>
+<button (click)="conta()" routerLink="/count-page">Conta</button>
+<button (click)="ricerca()" routerLink="/search-page">Ricerca</button>
