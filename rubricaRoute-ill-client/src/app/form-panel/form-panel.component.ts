@@ -15,22 +15,24 @@ export class FormPanelComponent implements OnInit {
   @Output() cont = new EventEmitter<string>();
   @Output() ric = new EventEmitter<string>();
 
+  c: string = "conta";
+  r: string = "ricerca";
   constructor() { }
-
   ngOnInit(): void {
+
   }
 
   aggiungi() {
-    this.add.emit(this.nome);
+    this.add.emit(this.nome)
     this.add.emit(this.cognome);
     this.add.emit(this.telefono);
   }
 
   conta() {
-    this.cont.emit("");
+    this.cont.emit(this.c);
   }
 
   ricerca() {
-    this.ric.emit("");
+    this.ric.emit(this.r);
   }
 }

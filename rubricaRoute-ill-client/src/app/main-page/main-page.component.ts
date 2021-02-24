@@ -13,14 +13,14 @@ export class MainPageComponent implements OnInit {
   }
 
   aggiungi(s: string) {
-    console.log("Aggiunto campo");
+    console.log('Aggiunto campo', s);
   }
 
   conta(s: string) {
-    console.log("Ricevuto evento conta");
+    console.log('Ricevuto evento', s);
   }
 
   ricerca(s: string) {
-    console.log("Ricevuto evento ricerca");
+    console.log('Ricevuto evento ricerca', s);
   }
 }
