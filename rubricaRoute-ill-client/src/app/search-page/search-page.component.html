@@ -10,10 +10,10 @@
         <th>Cognome</th>
         <th>Telefono</th>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr *ngFor="let a of med.persone">
+        <td>{{a.nome}}</td>
+        <td>{{a.cognome}}</td>
+        <td>{{a.telefono}}</td>
         <td><button>X</button></td>
     </tr>
 </table>

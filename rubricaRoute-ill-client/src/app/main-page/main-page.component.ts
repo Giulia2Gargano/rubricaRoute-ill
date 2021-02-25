@@ -17,17 +17,17 @@ export class MainPageComponent implements OnInit {
   }
 
   aggiungi() {
-    this.med.persone.push(this.persona);
-    this.persona = new Persona();
+    // this.med.persone.push(this.persona);
+    // this.persona = new Persona();
   }
 
   conta(s: string) {
-    console.log('Ricevuto evento', s);
-    this.router.navigateByUrl("/count-page");
   }
 
   ricerca(s: string) {
-    console.log('Ricevuto evento', s);
-    this.router.navigateByUrl("/search-page");
+  }
+
+  cancella(i: number) {
+    this.med.persone.splice(i, 1);
   }
 }

@@ -1,5 +1,5 @@
 <h1>Main Page</h1>
-<app-form-panel (add)="aggiungi($event)" (cont)="conta($event)" (ric)="ricerca($event)"></app-form-panel>
+<app-form-panel (add)="aggiungi()" (cont)="conta()" ></app-form-panel>
 <br>
 <br>
 <table>
@@ -8,10 +8,10 @@
         <th>Cognome</th>
         <th>Telefono</th>
     </tr>
-    <tr *ngFor="let a of med.persone">
+    <tr *ngFor="let a of med.persone,index as i">
         <td>{{a.nome}}</td>
         <td>{{a.cognome}}</td>
         <td>{{a.telefono}}</td>
-        <td><button>X</button></td>
+        <td><button (click)="cancella(i)">X</button></td>
     </tr>
 </table>
