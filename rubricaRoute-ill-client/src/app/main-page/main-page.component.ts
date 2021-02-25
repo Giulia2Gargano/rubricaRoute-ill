@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MediatorService } from '../mediator.service';
+import { Persona } from '../persona';
 
 @Component({
   selector: 'app-main-page',
@@ -7,14 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-
-  constructor(private router: Router) { }
+ persona: Persona= new Persona();
+  constructor(public med: MediatorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   aggiungi(s: string) {
-    console.log('Aggiunto campo', s);
+  this.med.persone.push(this.persona);
+  this.persona= new Persona();
   }
 
   conta(s: string) {
