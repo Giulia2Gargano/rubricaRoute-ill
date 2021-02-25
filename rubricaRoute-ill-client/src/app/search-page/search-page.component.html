@@ -1,19 +1,33 @@
 <h2>Search Page</h2>
-<input placeholder="Cerca" type="text">
-<button>Cerca</button>
-<button routerLink="/main-page">Main Page</button>
+<input placeholder="Cerca" type="text" [(ngModel)]="criterioRic">
+<button (click)="cerca()">Cerca</button>
+<button (click)="mainPage()">Main Page</button>
 <br>
 <br>
-<table>
+<table *ngIf="showRubCompl">
     <tr>
         <th>Nome</th>
         <th>Cognome</th>
         <th>Telefono</th>
     </tr>
-    <tr *ngFor="let a of med.persone">
+    <tr *ngFor="let a of med.persone, index as i">
         <td>{{a.nome}}</td>
         <td>{{a.cognome}}</td>
         <td>{{a.telefono}}</td>
-        <td><button>X</button></td>
+        <td><button (click)="elimina(i)">X</button></td>
+    </tr>
+</table>
+
+<table *ngIf="showRubFiltr">
+    <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Telefono</th>
+    </tr>
+    <tr *ngFor="let b of personeFiltrate, index as i">
+        <td>{{b.nome}}</td>
+        <td>{{b.cognome}}</td>
+        <td>{{b.telefono}}</td>
+        <td><button (click)="elimina(i)">X</button></td>
     </tr>
 </table>

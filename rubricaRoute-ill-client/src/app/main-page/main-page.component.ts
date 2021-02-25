@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MediatorService } from '../mediator.service';
-import { Persona } from '../persona';
 
 @Component({
   selector: 'app-main-page',
@@ -10,21 +9,21 @@ import { Persona } from '../persona';
 })
 export class MainPageComponent implements OnInit {
 
-  persona: Persona = new Persona();
+  
   constructor(public med: MediatorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  aggiungi() {
-    // this.med.persone.push(this.persona);
-    // this.persona = new Persona();
-  }
-
   conta(s: string) {
+    this.router.navigateByUrl("/count-page");
+    console.log(s);
   }
 
-  ricerca(s: string) {
+  cerca(s: string) {
+    this.router.navigateByUrl("/search-page");
+    console.log(s);
+    
   }
 
   cancella(i: number) {

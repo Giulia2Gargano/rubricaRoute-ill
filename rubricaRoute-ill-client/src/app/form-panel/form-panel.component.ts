@@ -10,10 +10,22 @@ import { Persona } from '../persona';
 })
 export class FormPanelComponent implements OnInit {
 
-  persona: Persona = new Persona();
+  @Input() nomeInput: string;
+  @Input() cognomeInput: string;
+  @Input() telefonoInput: string;
+
+  @Output() contaOut = new EventEmitter<string>();
+  @Output() cercaOut = new EventEmitter<string>();
+
+  nome: string;
+  cognome: string;
+  telefono: string;
+  persona = new Persona();
   constructor(public med: MediatorService, private router: Router) { }
   ngOnInit(): void {
-
+    this.nome=this.nomeInput;
+    this.cognome=this.cognomeInput;
+    this.telefono=this.telefonoInput;
   }
 
   aggiungi() {
@@ -22,12 +34,12 @@ export class FormPanelComponent implements OnInit {
   }
 
   conta() {
-    this.router.navigateByUrl("/count-page");
+    this.contaOut.emit("Evento conta")
   }
 
-  ricerca() {
-    this.router.navigateByUrl("/search-page");
+  cerca() {
+    this.cercaOut.emit("Evento cerca")
   }
 
- 
+
 }
