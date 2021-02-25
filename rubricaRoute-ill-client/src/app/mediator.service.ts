@@ -6,5 +6,6 @@ import { Persona } from './persona';
 })
 export class MediatorService {
   persone: Persona[] = [];
+ 
   constructor() { }
 }

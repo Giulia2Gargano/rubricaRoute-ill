@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MediatorService } from '../mediator.service';
+import { Persona } from '../persona';
 
 @Component({
   selector: 'app-form-panel',
@@ -6,33 +8,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./form-panel.component.css']
 })
 export class FormPanelComponent implements OnInit {
-
-  @Input() nome: string = "";
-  @Input() cognome: string = "";
-  @Input() telefono: string = "";
-
-  @Output() add = new EventEmitter<string>();
-  @Output() cont = new EventEmitter<string>();
-  @Output() ric = new EventEmitter<string>();
-
-  c: string = "conta";
-  r: string = "ricerca";
-  constructor() { }
+  
+  persona: Persona= new Persona();
+  constructor(public med: MediatorService) { }
   ngOnInit(): void {
 
   }
 
   aggiungi() {
-    this.add.emit(this.nome)
-    this.add.emit(this.cognome);
-    this.add.emit(this.telefono);
+    this.med.persone.push(this.persona);
+    this.persona= new Persona();
   }
 
   conta() {
-    this.cont.emit(this.c);
+
   }
 
   ricerca() {
-    this.ric.emit(this.r);
+    
   }
 }

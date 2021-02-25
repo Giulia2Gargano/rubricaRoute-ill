@@ -9,15 +9,16 @@ import { Persona } from '../persona';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
- persona: Persona= new Persona();
+
+  persona: Persona = new Persona();
   constructor(public med: MediatorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  aggiungi(s: string) {
-  this.med.persone.push(this.persona);
-  this.persona= new Persona();
+  aggiungi() {
+    this.med.persone.push(this.persona);
+    this.persona = new Persona();
   }
 
   conta(s: string) {
